@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.2//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="basic.layout" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="appTitle" value="My Spring MVC Test" cascade="true" />
+		<put-attribute name="banner" value="/WEB-INF/jsp/banner.jsp" />
+		<put-attribute name="navigation" value="/WEB-INF/jsp/navigation.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="home" extends="basic.layout">
+		<put-attribute name="pageTitle" value="This is the home page" cascade="true" />
+		<put-attribute name="pageColor" value="gray" cascade="true" />
+		<put-attribute name="body" value="/WEB-INF/jsp/body.jsp" />
+	</definition>
+	
+	<definition name="tab1" extends="basic.layout">
+		<put-attribute name="pageTitle" value="This is the home page" cascade="true" />
+		<put-attribute name="pageColor" value="gray" cascade="true" />
+		<put-attribute name="body">
+			<definition name="top" template="/WEB-INF/jsp/body/parts.jsp">
+				<put-attribute name="top" value="/WEB-INF/jsp/body/top.jsp" />
+				<put-attribute name="left" value="/WEB-INF/jsp/body/left.jsp" />
+				<put-attribute name="right" value="/WEB-INF/jsp/body/right.jsp" />
+			</definition>
+		</put-attribute>
+	</definition>
+	
+</tiles-definitions>
+
+
